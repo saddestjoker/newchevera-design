@@ -338,69 +338,64 @@ a {
 .main-nav nav a.active {
   background-color: darkorange;
 }
-
-@media only screen and (max-width: 768px) {
-  .main-nav nav {
-    flex-direction: column; /* Stack navigation vertically */
-  }
-  .main-nav nav a {
-    padding: 1rem; /* Adjust padding for smaller screens */
-  }
-}
-.main-header .contact:first-of-type .contact-main {
-  width: 120px;
-}
-.main-header .contact:last-of-type {
-  margin-left: 130px;
-}
-.main-header .contact:last-of-type .contact-main {
-  width: 220px;
-}
-@media only screen and (max-width: 768px) {
-  .main-nav{
-  position: relative;
-  } 
-  .container{
-    display: none;
-  }
-  .humburger{
-  display: block;
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: 1;
+.hamburger {
+  display: none;
   background-color: darkorange;
-  padding: 10px;
   border: none;
-  border-radius: 5px;
+  padding: 10px;
   cursor: pointer;
+  font-size: 18px;
+  border-radius: 5px;
+  color: #fff;
+}
+
+.hamburger_active {
+  background-color: #fff;
+  color: rgb(0, 0, 0);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .hamburger {
+      display: block;
   }
-  .hamburger::before{
-  content: "";
-  display: block;
-  width: 25px;
-  height: 4px;
-  background-color: darkorange;
-  margin-bottom: 5px;
+
+  nav div a {
+      display: none;
   }
-  .hamburger::after{
-  content: "";
-  display: block;
-  width: 25px;
-  height: 4px;
-  background-color: darkorange;
-  margin-top: 5px;
-  }
-  .hamburger_active + .container{
-    display: block;
+
+  nav div a.show {
+      display: block;
+      margin: 10px 0;
+      color: rgb(0, 0, 0);
   }
 }
-@media only screen and (min-width: 769px) {
-  .hamburger{
-    display: none;
+
+@media (max-width: 992px) {
+  .main-nav nav {
+      flex-direction: column;
   }
-  
-}
+
+  .main-nav nav .hamburger {
+      display: block;
+      color: #fff;
+      background: none;
+      border: none;
+      font-size: 24px;
+  }
+
+  .main-nav nav a {
+      display: none;
+  }
+
+  .main-nav nav a.active {
+      display: block;
+  }
+
+  .main-nav nav a.show {
+      display: block;
+  }
+}  
 .kv {
   background-color: #d3dce4;
   margin-bottom: 15px;
@@ -452,26 +447,19 @@ a {
   width: 100%;
 }
 
-@media screen and (max-width: 768px) {
-  /* Adjust font sizes for smaller screens */
-  .slider-banner h2 {
-    font-size: 2rem;
-  }
-  .slider-banner h3 {
-    font-size: 1rem;
+@media (max-width: 768px) {
+  .kv {
+      height: 300px;
   }
 
-  /* Center background image for mobile */
-  .item-kv-1 {
-    background-position: center center;
+  .item-kv-txt h2 {
+      font-size: 24px;
   }
 
-  /* Reduce padding for smaller screens */
-  .item-kv-txt {
-    padding-top: 2em;
-    padding-bottom: 2em;
+  .item-kv-txt h3 {
+      font-size: 18px;
   }
-}
+}  
 .doc-section {
   background-color: rgb(243, 238, 233);
   padding-top: 4em;
@@ -521,6 +509,51 @@ a {
 }
 .doc-section .icon-car:after {
   background-image: url(images/person-3.png);
+}
+@media (max-width: 1200px) {
+  .col-xl-4 {
+      width: 50%;
+  }
+}
+
+@media (max-width: 768px) {
+  .col-md-6, .col-xl-4 {
+      width: 100%;
+  }
+
+  .row {
+      flex-direction: column;
+  }
+
+  .item {
+      margin-bottom: 20px;
+  }
+
+  h3 {
+      font-size: 16px;
+  }
+
+  p {
+      font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+      padding: 0 10px;
+  }
+
+  .item {
+      margin-bottom: 15px;
+  }
+
+  h3 {
+      font-size: 14px;
+  }
+
+  p {
+      font-size: 12px;
+  }
 }
 @media screen and (min-width: 768) {
   .doc-section {
@@ -592,6 +625,20 @@ a {
   .service-card .btn:hover:before {
     opacity: 1;
     transform: translateX(0) scale(1);
+  }
+}
+@media (max-width: 576px) {
+  .main-info .container {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .map-container iframe {
+      height: 300px;
+  }
+
+  .footer-content {
+      text-align: center;
   }
 }
 .blog {
@@ -1055,7 +1102,7 @@ a {
   padding-bottom: 3em;
   color: #ffffff;
   background-color: rgb(0, 0, 0);
-  border-radius: 10px;
+  border-radius: 1px;
 }
 .main-footer h3 {
   color: #ffffff;
