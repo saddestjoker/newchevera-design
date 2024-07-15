@@ -338,6 +338,15 @@ a {
 .main-nav nav a.active {
   background-color: darkorange;
 }
+
+@media only screen and (max-width: 768px) {
+  .main-nav nav {
+    flex-direction: column; /* Stack navigation vertically */
+  }
+  .main-nav nav a {
+    padding: 1rem; /* Adjust padding for smaller screens */
+  }
+}
 .main-header .contact:first-of-type .contact-main {
   width: 120px;
 }
@@ -346,6 +355,51 @@ a {
 }
 .main-header .contact:last-of-type .contact-main {
   width: 220px;
+}
+@media only screen and (max-width: 768px) {
+  .main-nav{
+  position: relative;
+  } 
+  .container{
+    display: none;
+  }
+  .humburger{
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  background-color: darkorange;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  }
+  .hamburger::before{
+  content: "";
+  display: block;
+  width: 25px;
+  height: 4px;
+  background-color: darkorange;
+  margin-bottom: 5px;
+  }
+  .hamburger::after{
+  content: "";
+  display: block;
+  width: 25px;
+  height: 4px;
+  background-color: darkorange;
+  margin-top: 5px;
+  }
+  .hamburger_active + .container{
+    display: block;
+  }
+}
+@media only screen and (min-width: 769px) {
+  .hamburger{
+    display: none;
+  }
+  
 }
 .kv {
   background-color: #d3dce4;
@@ -396,6 +450,27 @@ a {
   left: 0;
   bottom: 50px;
   width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  /* Adjust font sizes for smaller screens */
+  .slider-banner h2 {
+    font-size: 2rem;
+  }
+  .slider-banner h3 {
+    font-size: 1rem;
+  }
+
+  /* Center background image for mobile */
+  .item-kv-1 {
+    background-position: center center;
+  }
+
+  /* Reduce padding for smaller screens */
+  .item-kv-txt {
+    padding-top: 2em;
+    padding-bottom: 2em;
+  }
 }
 .doc-section {
   background-color: rgb(243, 238, 233);
